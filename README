@@ -1,0 +1,80 @@
+
+  Creates a Super Overlay for Google Earth by dividing an image into smaller tiles
+  and writing necessary KML-files.
+
+  FILE should be a KML-file that contains a GroundOverlay tag that specifies the
+  source image and its coordinates.
+  Example:
+
+  <?xml version="1.0" encoding="iso-8859-1"?>
+  <kml xmlns="http://earth.google.com/kml/2.1">
+    <GroundOverlay>
+      <name>Base name</name>
+      <drawOrder>0</drawOrder>
+      <Icon>
+        <href>image.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>59.4607614099377</north>
+        <south>59.2839926519017</south>
+        <west>18.0395238098571</west>
+        <east>18.5313536923417</east>
+      </LatLonBox>
+    </GroundOverlay>
+  </kml>
+
+  Alternatively the KML-file could contain two Placemarks for two knows coordinates.
+  The x and y coordinates in the original image must be specified in the description.
+  The --image option must be used.
+
+  Example:
+
+  <?xml version="1.0" encoding="iso-8859-1"?>
+  <kml xmlns="http://earth.google.com/kml/2.1">
+    <Document>
+      <name>Base name</name>
+      <Placemark>
+        <description>123,456</description>
+        <Point>
+          <coordinates>18.08541713675965,59.37609854061633,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <description>123,456</description>
+        <Point>
+          <coordinates>18.18541713675965,59.47609854061633,0</coordinates>
+        </Point>
+      </Placemark>
+    </Document>
+  </kml>
+
+
+
+Options:
+  --image=file       Source image to use. If not specified the Icon href of the
+                     GroundOverlay is used. Required if a KML-file with Placemarks
+                     is used.
+
+  --name=string      Base name to use for all files. If not specified the name of the
+                     Document or GroundOverlay in the KML is used. If that is not found
+                     the image name without the extension is used.
+
+  --path=path        Output directory where images and KML-files are written.
+                     Default is current directory.
+
+  --type=extension   Type to use for all genereted images. Eg. 'png', 'tif', 'gif', 'jpg'.
+                     Default is '$outputImageType'.
+
+  --quality=number   Image quality used if type is 'jpg'.
+                     Value between 1 and 100. Default is $outputImageQuality.
+
+  --size=number      Size used for tiles. Must be a power of two, eg. 256, 512, 1024.
+                     Default is $tileSize.
+
+  --draworder=number Base drawOrder to use for all GroundOverlays. This number will be
+                     incremented for each level to make sure higher detail images are
+                     drawn on top. If not specified the drawOrder of the GroundOverlay
+                     in the input KML-file is used.
+
+  --debug            Print debug messages
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+    <Document>
+	<name>Test map</name>
+	<GroundOverlay>
+	    <name>Test map</name>
+	    <drawOrder>10</drawOrder>
+	    <Icon>
+		<href>test_map.png</href>
+	    </Icon>
+	    <LatLonBox>
+		<north>59.4502669714439</north>
+		<south>59.3717200606888</south>
+		<west>17.9207631882222</west>
+		<east>18.0783389442222</east>
+	    </LatLonBox>
+	</GroundOverlay>
+    </Document>
+</kml>

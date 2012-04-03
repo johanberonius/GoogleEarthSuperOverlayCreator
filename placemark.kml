@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+    <Document>
+	<name>Test map</name>
+	<Placemark>
+	    <description>485,961</description>
+	    <Point>
+		<coordinates>18.066666667,59.433333333,0</coordinates>
+	    </Point>
+	</Placemark>
+	<Placemark>
+	    <description>4059,5630</description>
+	    <Point>
+		<coordinates>18.266666667,59.300000000,0</coordinates>
+	    </Point>
+	</Placemark>
+    </Document>    
+</kml>
